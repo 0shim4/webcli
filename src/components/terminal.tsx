@@ -9,6 +9,9 @@ export default function Terminal() {
   const onKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       setLines([...lines, text])
+      if (text === "> clear" || text === "> cls") {
+        setLines([])
+      }
       setText("> ")
     }
   }
@@ -18,7 +21,12 @@ export default function Terminal() {
     
   return (
     <div className={styles.terminal}>
-      {lines.map((line, index) => <p key={String(index)}>{line}</p>)}
+      {lines.map((line, index) => <input
+        readOnly={true}
+        key={String(index)}
+        value={line}
+        className={styles.inputLine}
+      />)}
       <input
         ref={ref}
         className={styles.inputLine}
