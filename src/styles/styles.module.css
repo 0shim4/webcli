@@ -1,3 +1,8 @@
+@font-face {
+	font-family: 'VT323-Regular';
+	src: url(../font/VT323-Regular.ttf) format('truetype');
+}
+
 .terminal {
     background-color: #000;
     color: #fff;
@@ -6,6 +11,7 @@
     text-align: left;
     overflow-y: scroll;
     padding: 6px;
+	font-family: 'VT323-Regular';
 }
 
 .inputLine {
@@ -14,6 +20,8 @@
     border: none;
     outline: none;
     width: 100%;
+	font-family: 'VT323-Regular';
+    font-size: 24px;
 }
 
 p {
